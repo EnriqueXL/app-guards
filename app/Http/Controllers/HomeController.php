@@ -8,6 +8,6 @@ class HomeController extends Controller
 {
     // llamando a la vista home, sustituyendo la funcion a __invoke. Solo consta de una sola funcion.
     public function __invoke(){
-        return "Inicio de la pagina";
+        return view('home');
     }
 }

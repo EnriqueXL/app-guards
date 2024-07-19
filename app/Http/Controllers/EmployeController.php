@@ -9,7 +9,7 @@ class EmployeController extends Controller
     //Obtener lista de empleados
     public function index()
     {
-        return 'Inicio de empleados';
+        return 'Inicio para los guardias';
     }
 
     public function show($id)
@@ -20,13 +20,16 @@ class EmployeController extends Controller
     //Crear un nuevo empleado
     public function create()
     {
-        return 'Crear un nuevo empleado';
+        return view('emplye.create-employe');
     }
 
     //Editar un empleado
-    public function edit($id)
+    public function edit($id, $area)
     {
-        return 'Editar un empleado con id: ' . $id;
+        // return view('employe.edit-employe', [
+        //     'id' => $id
+        // ]);  
+        return view('employe.edit-employe', compact('id', 'area')); 
     }
 
     //Eliminar un empleado

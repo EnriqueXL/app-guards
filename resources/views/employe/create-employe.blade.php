@@ -7,6 +7,8 @@
     <title>Nuevo guardia</title>
 </head>
 <body>
+   
+  
     {{-- formulario para crear un nuevo guardia --}}
     {{-- <form action="{{ route('guard.store') }}" method="post"> --}}
     <form action="" method="post">

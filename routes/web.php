@@ -12,13 +12,13 @@ Route::get('/home', HomeController::class);
 Route::get('/employe', [EmployeController::class, 'index']);
 
 //Mostrar empleado
-Route::get('/employe', [EmployeController::class, 'show']);
+Route::get('/employe/get/{id}', [EmployeController::class, 'show']);
 
 //Nuevo empleado
-Route::get('/employe/create/{id}', [EmployeController::class, 'create']);
+Route::get('/employe/create', [EmployeController::class, 'create']);
 
 //Editar empleado
-Route::get('/employe/edit/{id}', [EmployeController::class, 'edit']);
+Route::get('/employe/edit/{id}/{area}', [EmployeController::class, 'edit']);
 
 //Eliminar empleado
 Route::get('/employe/delete/{id}', [EmployeController::class, 'delete']);
