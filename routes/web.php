@@ -1,51 +1,29 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\EmployeController;
 
-Route::get('/home', function () {
-    return view('home');
-});
+//Solo tiene una funcion, por lo que se puede llamar directamente en la ruta
+Route::get('/home', HomeController::class);
 
-Route::get('/about', function () {
-    return view('about');
-});
+//Controlador de empleados
+Route::get('/employe', [EmployeController::class, 'index']);
 
+//Mostrar empleado
+Route::get('/employe', [EmployeController::class, 'show']);
 
+//Nuevo empleado
+Route::get('/employe/create/{id}', [EmployeController::class, 'create']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+//Editar empleado
+Route::get('/employe/edit/{id}', [EmployeController::class, 'edit']);
 
-Route::get('/services', function () {
-    return view('services');
-});
-
-Route::get('/portfolio', function () {
-    return view('portfolio');
-});
-
-Route::get('/home/createGuard', function () {
-    return view('createGuard');
-});
+//Eliminar empleado
+Route::get('/employe/delete/{id}', [EmployeController::class, 'delete']);
 
 
-//Formularios con parametros variables
-Route::get('/formulario/{post}', function ($post) {
-    return "form post: $post";
-});
+//Post Controller for petition
+Route::get('/post', [PostController::class, 'index']);
 
-//Formularios con parametros variables
-Route::get('/formulario/{id}/{category}', function ($id, $guard) {
-    return "form id: $id, category: $guard";
-});
-
-
-// Route::get('/formulario/{id}/{category}/{coments?}', function ($id, $category, $coments = null) {
- 
-//     if ($coments) {
-
-//         return "form id: $id, category: $category, comments: $coments";
-//     }
-//     return "form id: $id, category: $category";
-   
-// });
