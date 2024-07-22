@@ -43,12 +43,13 @@
 
     <div class="container-fluid">
 
-        <x-alert type="danger" class="mb-4">
+        <x-alert type="info" class="m-4">
             <x-slot name="title">
                 Titulo de la alerta
             </x-slot>
             Contenido de la alerta
         </x-alert>
+
 
 
         <div>
