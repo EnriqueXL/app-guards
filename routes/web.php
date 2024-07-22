@@ -7,6 +7,7 @@ use App\Http\Controllers\EmployeController;
 
 //Solo tiene una funcion, por lo que se puede llamar directamente en la ruta
 Route::get('/home', HomeController::class);
+Route::get('/', HomeController::class);
 
 //Controlador de empleados
 Route::get('/employe', [EmployeController::class, 'index']);
