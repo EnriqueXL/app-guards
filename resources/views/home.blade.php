@@ -1,13 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pagina principal</title>
-</head>
-<body>
+@extends('layouts.app')
+
+@section('css')
+    <style>
+        /* css custom page */
+    </style>
+@endsection
+
+@section('title', 'Home App')
+
+@section('content')
+    <div class="container-fluid">
     
-    <h1>Home page</h1>
-</body>
-</html>
+        <div class= "description m-2 text-center">
+            <h1>Sevicio de guardias de seguridad</h1>
+            <p>
+                Somos una empresa dedicada a la prestación de servicios de seguridad privada, con más de 20 años de experiencia en el mercado.
+            </p>
+        </div>
+
+        <x-alert type="info" class="m-4">
+            <x-slot name="title">
+                Nuevo mensaje
+            </x-slot>
+            <p>Este es un mensaje de información</p>
+        </x-alert>
+    </div>
+@endsection
+
+@section('js')
+    <script>
+    //    alert('Home App');
+    </script>
+@endsection
