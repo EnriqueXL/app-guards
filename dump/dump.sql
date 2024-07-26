@@ -7,8 +7,9 @@ CREATE TABLE Roles (
 -- Crear tabla Empleados
 CREATE TABLE Empleados (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    apellido VARCHAR(100) NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    apellido_paterno VARCHAR(50) NOT NULL,
+    apellido_materno VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     telefono VARCHAR(15),
     direccion VARCHAR(255),
@@ -24,25 +25,16 @@ CREATE TABLE Ubicaciones (
     direccion VARCHAR(255) NOT NULL
 );
 
--- Crear tabla Guardias
-CREATE TABLE Guardias (
-    id INT PRIMARY KEY AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    descripcion TEXT,
-    id_ubicacion INT,
-    FOREIGN KEY (id_ubicacion) REFERENCES Ubicaciones(id)
-);
-
 -- Crear tabla Turnos
 CREATE TABLE Turnos (
     id INT PRIMARY KEY AUTO_INCREMENT,
-    id_guardia INT,
     id_empleado INT,
+    id_ubicacion INT,
     fecha DATE NOT NULL,
     hora_inicio TIME NOT NULL,
     hora_fin TIME NOT NULL,
-    FOREIGN KEY (id_guardia) REFERENCES Guardias(id),
-    FOREIGN KEY (id_empleado) REFERENCES Empleados(id)
+    FOREIGN KEY (id_empleado) REFERENCES Empleados(id),
+    FOREIGN KEY (id_ubicacion) REFERENCES Ubicaciones(id)
 );
 
 -- Crear tabla Asistencias
@@ -60,14 +52,12 @@ CREATE TABLE Asistencias (
 CREATE TABLE Rondines (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_turno INT,
-    id_empleado INT,
     fecha DATE NOT NULL,
     hora_inicio TIME NOT NULL,
     hora_fin TIME NOT NULL,
     ubicacion_inicio VARCHAR(255) NOT NULL,
     ubicacion_fin VARCHAR(255) NOT NULL,
-    FOREIGN KEY (id_turno) REFERENCES Turnos(id),
-    FOREIGN KEY (id_empleado) REFERENCES Empleados(id)
+    FOREIGN KEY (id_turno) REFERENCES Turnos(id)
 );
 
 -- Crear tabla GradoIncidencias
