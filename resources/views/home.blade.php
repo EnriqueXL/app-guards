@@ -18,7 +18,16 @@
             </p>
         </div>
 
-        <x-alert type="info" class="m-4">
+        {{-- Componentes de clase --}}
+        {{-- <x-alert2 type="success" class="m-4">
+            <x-slot name="title">
+                Nuevo mensaje
+            </x-slot>
+            <p>Este es un mensaje de información</p>
+        </x-alert2> --}}
+
+        {{-- Componentes anonimos --}}
+        <x-alert type="success" class="m-4">
             <x-slot name="title">
                 Nuevo mensaje
             </x-slot>

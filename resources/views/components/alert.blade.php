@@ -1,4 +1,4 @@
-{{-- Default --}}
+{{-- Componentes anonimos --}}
 @props(['type' => 'info'])
 
 @php
