@@ -12,6 +12,8 @@ class Employe extends Model
 {
     use HasFactory;
 
+   
+
     protected function nombre(): Attribute
     {
         //Mutador
@@ -22,9 +24,12 @@ class Employe extends Model
             get: fn($value) => ucwords(strtolower($value))
             
         );
-        
-        
     }
+
+    //casteo de atributos, para que se muestre en el formato deseado y no por defecto de eloquent (string).
+    protected $casts = [
+        'fecha_contratacion' => 'datetime:Y-m-d',
+    ];
     protected $table = 'empleados';
 
 
