@@ -21,12 +21,17 @@ class Users extends Seeder
 
         $user->save();
 
+        //usuario real
+
         $user = new User();
-        $user->name = 'test_user2025';
-        $user->email = 'test_2025@gmail.com';
+        $user->name = 'Juan carlos';
+        $user->email = 'juanCarlos@guards.com';
         $user->password = bcrypt('test123');
 
         $user->save();
+
+         //fabrica de registros de usuarios (genera 5 registros de prueba)
+         User::factory(5)->create();
 
     }
 }
