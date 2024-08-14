@@ -1,3 +1,39 @@
-body{
+body {
    background-color: #EAEDED;
+   display: flex;
+}
+.sidebar {
+   width: 250px;
+   height: 100vh;
+   background: #343a40;
+   color: white;
+   transition: width 0.3s;
+}
+.sidebar.collapsed {
+   width: 80px;
+}
+.sidebar .nav-link {
+   color: white;
+}
+.sidebar .nav-link .icon {
+   margin-right: 10px;
+}
+.sidebar.collapsed .nav-link .label {
+   display: none;
+}
+.sidebar.collapsed .nav-link {
+   text-align: center;
+}
+.content {
+   flex-grow: 1;
+   padding: 20px;
+}
+.toggle-btn {
+   position: absolute;
+   top: 10px;
+   left: 260px;
+   cursor: pointer;
+}
+.sidebar.collapsed + .toggle-btn {
+   left: 90px;
 }

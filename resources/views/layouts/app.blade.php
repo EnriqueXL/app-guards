@@ -14,7 +14,7 @@
 
     {{-- Tipografia --}}
 
-    {{-- css custom global--}}
+    {{-- css custom global --}}
     <link rel="stylesheet" href="{{ asset('css/style-global.css') }}">
 
     {{-- css custom page --}}
@@ -27,54 +27,58 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/"> <img src="{{ asset('img/logos/huella.png') }}" alt="Logo" width="60" height="60"> SeguridadCorp</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Inicio <span class="sr-only">(actual)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                </ul>
+   
+
+    <!--side bar-->
+    <div class="sidebar" id="sidebar">
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-home icon"></i>
+                    <span class="label">Home</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-user icon"></i>
+                    <span class="label">Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-envelope icon"></i>
+                    <span class="label">Messages</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-cog icon"></i>
+                    <span class="label">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--toggle button-->
+    <div class="toggle-btn" id="toggle-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="content">
+        <!-- Contenido principal -->
+
+        @yield('content')
+
+        {{-- Footer --}}
+        <footer class="footer text-center py-3">
+            <div class="container">
+                <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
+                <p>Síguenos en:
+                    <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
+                </p>
             </div>
-        </div>
-    </nav>
+        </footer>
+    </div>
 
-    <!-- header -->
-    <header>
-    </header>
-
-    <!-- Main -->
-    
-    @yield('content')
-  
-
-    {{-- Footer --}}
-    <footer class="footer text-center py-3">
-        <div class="container">
-            <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
-            <p>Síguenos en: 
-                
-                <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
-             
-            </p>
-        </div>
-    </footer>
 
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -92,6 +96,7 @@
 
     {{-- js custom page --}}
     @yield('js')
+
 </body>
 
 </html>
