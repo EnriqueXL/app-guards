@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
         integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     {{-- FontAwesome --}}
+    <script src="https://kit.fontawesome.com/e3b4af92a1.js" crossorigin="anonymous"></script>
+
     {{-- Tipografia --}}
 
     {{-- css custom global--}}
@@ -28,7 +30,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#"> <img src="{{ asset('img/logos/huella.png') }}" alt="Logo" width="60" height="60"> SeguridadCorp</a>
+            <a class="navbar-brand" href="/"> <img src="{{ asset('img/logos/huella.png') }}" alt="Logo" width="60" height="60"> SeguridadCorp</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -69,7 +71,7 @@
                 
                 <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="text-dark ml-2"><i class="fab fa-linkedin-in"></i></a>
+             
             </p>
         </div>
     </footer>
