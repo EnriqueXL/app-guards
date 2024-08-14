@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 //Modelos
 use App\Models\Employe;
+use App\Models\EmployeRole;
 
 use Illuminate\Http\Request;
 
@@ -12,12 +13,48 @@ class EmployeController extends Controller
     //Obtener lista de empleados
     public function index()
     {
-        return 'Inicio para los guardias';
+
+        $employes = Employe::all();
+
+        $headers = ['Folio', 'Nombre completo', 'Estatus', 'Acciones'];
+
+        foreach ($employes as $employe) {
+            $employesInfo[] = [
+                'id' => $employe->id,
+                'nombre' => $employe->getFullName(),
+                'estatus' => $employe->getStatus(),
+                // 'actions' => [
+                //     'show' => route('employe.show', $employe->id),
+                //     'edit' => route('employe.edit', $employe->id),
+                //     'delete' => route('employe.delete', $employe->id),
+                // ]
+            ];
+        }
+
+        
+        return view('employe.all-employe', compact('headers', 'employesInfo'));
     }
 
     public function show($id)
     {
-        return 'Mostrar empleado con id: ' . $id;
+        $employe = Employe::with('roleEmploye')->find($id);
+
+        //encabezados
+        $headers = ['Folio, Nombre', 'email', 'telefono', 'direccion', 'Perfil', 'fecha_contratacion', 'estatus'];
+
+        $employesInfo= [
+            'id' => $employe->id,
+            'nombre' => $employe->getFullName(),
+            'email' => $employe->email,
+            'telefono' => $employe->telefono,
+            'direccion' => $employe->direccion,
+            'perfil' => $employe->roleEmploye->nombre,
+            'fecha_contratacion' => $employe->fecha_contratacion,
+            'estatus' => $employe->getStatus(),
+        ];
+        
+
+        return view('employe.show-employe', compact('headers', 'employesInfo'));
     }
 
     //Llamada a la vista para crear un empleado
@@ -32,7 +69,7 @@ class EmployeController extends Controller
         // return view('employe.edit-employe', [
         //     'id' => $id
         // ]);  
-        return view('employe.edit-employe', compact('id', 'area')); 
+        return view('employe.edit-employe', compact('id', 'area'));
     }
 
     //Eliminar un empleado
@@ -54,7 +91,7 @@ class EmployeController extends Controller
             'telefono' => 'required|string|max:10',
             'direccion' => 'required|string|max:255',
             'id_rol' => 'required|integer',
-           
+
         ]);
 
         $employe = new Employe();
