@@ -5,15 +5,15 @@ body {
 .sidebar {
    width: 250px;
    height: 100vh;
-   background: #343a40;
-   color: white;
+   background: white;
+   color: black;
    transition: width 0.3s;
 }
 .sidebar.collapsed {
    width: 80px;
 }
 .sidebar .nav-link {
-   color: white;
+   color: #424242;
 }
 .sidebar .nav-link .icon {
    margin-right: 10px;
@@ -23,6 +23,22 @@ body {
 }
 .sidebar.collapsed .nav-link {
    text-align: center;
+   
+}
+
+.logo-nav {
+   width: 45px;
+   height: 45px;
+
+}
+.sidebar.collapsed .logo-nav{
+   width: 30px;
+   height: 30px;
+
+}
+
+.sidebar.collapsed .logo_name {
+   display: none;
 }
 .content {
    flex-grow: 1;

@@ -27,10 +27,20 @@
 
 <body>
 
-   
+
 
     <!--side bar-->
     <div class="sidebar" id="sidebar">
+        <div class="row mt-3">
+            <div class="col text-center">
+                <div class="logo-details">
+                    <div class="navbar-logo" href="/"> <img class="logo-nav" src="{{ asset('img/logos/huella.png') }}" alt="Logo"></div>
+                </div>
+                <div>
+                    <div class="logo_name mt-1">SeguridadCorp</div>
+                </div>
+            </div>        
+        </div>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="#">
@@ -64,6 +74,33 @@
     </div>
     <div class="content">
         <!-- Contenido principal -->
+
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+               
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Inicio <span class="sr-only">(actual)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
         @yield('content')
 
