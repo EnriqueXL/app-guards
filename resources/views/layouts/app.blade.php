@@ -34,20 +34,58 @@
         <div class="row mt-3">
             <div class="col text-center">
                 <div class="logo-details">
-                    <div class="navbar-logo" href="/"> <img class="logo-nav" src="{{ asset('img/logos/huella.png') }}" alt="Logo"></div>
+                    <div class="navbar-logo" href="/"> <img class="logo-nav"
+                            src="{{ asset('img/logos/huella.png') }}" alt="Logo"></div>
                 </div>
                 <div>
                     <div class="logo_name mt-1">SeguridadCorp</div>
                 </div>
-            </div>        
+            </div>
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/">
                     <i class="fas fa-home icon"></i>
                     <span class="label">Home</span>
                 </a>
             </li>
+
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#collapseExample" role="button"
+                    aria-expanded="false" aria-controls="collapseExample">
+                    <i class="fas fa-user-friends icon"></i>
+
+                    <span class="label">Empleados</span>
+                    <i class="fas fa-caret-down icon-collapse"></i>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <div class="content-collapse ">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employe.index') }}">
+                                    <i class="fas fa-user-friends icon"></i>
+                                    <span class="label">Listado</span>
+                                </a>
+
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employe.create') }}">
+                                    <i class="fas fa-user-plus icon"></i>
+                                    <span class="label">Agregar</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-chart-line icon"></i>
+                    <span class="label">Statistics</span>
+                </a>
+            </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#">
                     <i class="fas fa-user icon"></i>
@@ -76,13 +114,13 @@
         <!-- Contenido principal -->
 
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container">
-               
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+
+                {{-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
-                </button>
+                </button> --}}
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">

@@ -37,9 +37,12 @@ body {
 
 }
 
-.sidebar.collapsed .logo_name {
+.sidebar.collapsed .logo_name,
+.sidebar.collapsed .icon-collapse .content-collapse{
    display: none;
+   
 }
+
 .content {
    flex-grow: 1;
    padding: 20px;
@@ -52,4 +55,12 @@ body {
 }
 .sidebar.collapsed + .toggle-btn {
    left: 90px;
+}
+
+.content-collapse{
+   margin-left: 10px;
+   transition: margin-left 0.3s;
+}
+.sidebar.collapsed .content-collapse{
+   margin-left: 0px;
 }

@@ -16,7 +16,7 @@ Route::get('/', HomeController::class);
 Route::get('/employe', [EmployeController::class, 'index'])->name('employe.index');
 
 //Nuevo empleado 
-Route::get('/employe/create', [EmployeController::class, 'create']);
+Route::get('/employe/create', [EmployeController::class, 'create'])->name('employe.create');
 
 //Mostrar empleado
 Route::get('/employe/get/{id}', [EmployeController::class, 'show'])->name('employe.show');
