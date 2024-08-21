@@ -9,7 +9,7 @@ use App\Models\Employe;
 use App\Models\EmployeRole;
 
 //Solo tiene una funcion, por lo que se puede llamar directamente en la ruta
-Route::get('/home', HomeController::class);
+Route::get('/home', HomeController::class)->name('home');
 Route::get('/', HomeController::class);
 
 //Controlador de empleados
