@@ -34,7 +34,7 @@
         <div class="row mt-3">
             <div class="col text-center">
                 <div class="logo-details">
-                    <div class="navbar-logo" href="/"> <img class="logo-nav"
+                    <div class="navbar-logo"> <img class="logo-nav"
                             src="{{ asset('img/logos/huella.png') }}" alt="Logo">
                     </div>
                 </div>
@@ -45,7 +45,7 @@
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="{{ route('home') }}">
                     <i class="fas fa-home icon"></i>
                     <span class="label">Home</span>
                 </a>
