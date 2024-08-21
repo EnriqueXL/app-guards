@@ -14,7 +14,8 @@ class EmployeController extends Controller
     public function index()
     {
 
-        $employes = Employe::all();
+        // $employes = Employe::all();
+        $employes = Employe::orderBy('id', 'desc')->paginate(10);
 
         $headers = ['Folio', 'Nombre completo', 'Estatus', 'Acciones'];
 
@@ -23,16 +24,16 @@ class EmployeController extends Controller
                 'id' => $employe->id,
                 'nombre' => $employe->getFullName(),
                 'estatus' => $employe->getStatus(),
-                // 'actions' => [
-                //     'show' => route('employe.show', $employe->id),
-                //     'edit' => route('employe.edit', $employe->id),
-                //     'delete' => route('employe.delete', $employe->id),
-                // ]
+                'actions' => [
+                    'show' => route('employe.show', $employe->id),
+                    'edit' => route('employe.edit', $employe->id),
+                   'delete' => route('employe.delete', $employe->id),
+                ] 
             ];
         }
 
         
-        return view('employe.all-employe', compact('headers', 'employesInfo'));
+        return view('employe.all-employe', compact('headers', 'employesInfo', 'employes'));
     }
 
     public function show($id)
@@ -64,12 +65,12 @@ class EmployeController extends Controller
     }
 
     //Editar un empleado
-    public function edit($id, $area)
+    public function edit($id)
     {
         // return view('employe.edit-employe', [
         //     'id' => $id
         // ]);  
-        return view('employe.edit-employe', compact('id', 'area'));
+        return view('employe.edit-employe', compact('id'));
     }
 
     //Eliminar un empleado

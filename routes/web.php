@@ -25,10 +25,10 @@ Route::post('/employe/store', [EmployeController::class, 'store'])->name('employ
 Route::get('/employe/get/{id}', [EmployeController::class, 'show'])->name('employe.show');
 
 //Editar empleado
-Route::get('/employe/edit/{id}/{area}', [EmployeController::class, 'edit']);
+Route::get('/employe/edit/{id}', [EmployeController::class, 'edit'])->name('employe.edit');
 
 //Eliminar empleado
-Route::get('/employe/delete/{id}', [EmployeController::class, 'delete']);
+Route::get('/employe/delete/{id}', [EmployeController::class, 'delete'])->name('employe.delete');
 
 
 //Post Controller for petition

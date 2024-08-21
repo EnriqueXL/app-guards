@@ -9,7 +9,7 @@
 <body>
 
     <h2>
-        Numero de empleado {{$id}}. <br> Area : {{$area}}
+        Numero de empleado {{$id}}.
     </h2>
 </body>
 </html>

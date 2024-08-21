@@ -11,15 +11,17 @@ class Table extends Component
 
     public $headers;
     public $employesInfo;
+    public $employes;
     public $actions;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($headers, $employesInfo)
+    public function __construct($headers, $employesInfo, $employes)
     {
         $this->headers = $headers;
         $this->employesInfo = $employesInfo;
+        $this->employes = $employes;
     }
 
     /**

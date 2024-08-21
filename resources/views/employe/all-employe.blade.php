@@ -13,9 +13,6 @@
 
         <div class= "description m-2 text-center">
             <h1>Listado de empleados</h1>
-            <p>
-                Aquí se muestra un listado de empleados registrados en el sistema.
-            </p>
         </div>
 
         @if (session('success'))
@@ -31,7 +28,8 @@
 
         <div>
             
-            <x-table :headers="$headers" :employesInfo="$employesInfo">
+            <x-table :headers="$headers" :employesInfo="$employesInfo" :employes="$employes">
+                
             </x-table>
         </div>
 

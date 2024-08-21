@@ -12,9 +12,6 @@ class Employe extends Model
 {
     use HasFactory;
 
-   
-    
-
     protected function nombre(): Attribute
     {
         //Mutador

@@ -112,3 +112,29 @@ body {
       padding: 10px;
    }
 }
+
+
+/* paginacion */
+/* custom.css */
+
+/* Personaliza los enlaces de paginación */
+.page-item.active .page-link {
+    background-color: #007bff; /* Color de fondo del enlace activo */
+    border-color: #007bff; /* Color del borde del enlace activo */
+}
+
+.page-link {
+    color: #007bff; /* Color del texto del enlace */
+}
+
+.page-link:hover {
+    color: #0056b3; /* Color del texto del enlace al pasar el ratón */
+    background-color: #e9ecef; /* Color de fondo del enlace al pasar el ratón */
+    border-color: #dee2e6; /* Color del borde del enlace al pasar el ratón */
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d; /* Color del texto del enlace deshabilitado */
+    background-color: #fff; /* Color de fondo del enlace deshabilitado */
+    border-color: #dee2e6; /* Color del borde del enlace deshabilitado */
+}
