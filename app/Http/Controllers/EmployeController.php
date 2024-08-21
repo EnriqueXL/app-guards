@@ -60,7 +60,7 @@ class EmployeController extends Controller
     //Llamada a la vista para crear un empleado
     public function create()
     {
-        return view('emplye.create-employe');
+        return view('employe.create-employe');
     }
 
     //Editar un empleado
@@ -81,17 +81,29 @@ class EmployeController extends Controller
     //Solicitudes POST para crear un empleado
     public function store(Request $request)
     {
+    
         $fecha = date('Y-m-d H:i:s');
-
         $request->validate([
             'nombre' => 'required|string|max:50',
             'apellido_paterno' => 'required|string|max:50',
             'apellido_materno' => 'required|string|max:50',
-            'email' => 'required|email|max:50',
-            'telefono' => 'required|string|max:10',
+            'email' => 'required|email|max:50|unique:empleados,email',
+            'telefono' => 'required|digits:10',
             'direccion' => 'required|string|max:255',
             'id_rol' => 'required|integer',
+            'fecha_nacimiento' => 'required|date',
 
+        ],[
+            'nombre.required' => 'El campo nombre es requerido',
+            'apellido_paterno.required' => 'El campo apellido paterno es requerido',
+            'apellido_materno.required' => 'El campo apellido materno es requerido',
+            'email.required' => 'El campo email es requerido',
+            'email.unique' => 'El email ya está registrado',
+            'telefono.required' => 'El campo teléfono es requerido',
+            'telefono.digits' => 'El campo teléfono debe tener exactamente 10 dígitos',
+            'direccion.required' => 'El campo dirección es requerido',
+            'id_rol.required' => 'El campo rol es requerido',
+            'fecha_nacimiento.required' => 'El campo fecha de nacimiento es requerido',
         ]);
 
         $employe = new Employe();
@@ -102,10 +114,16 @@ class EmployeController extends Controller
         $employe->telefono = $request->input('telefono');
         $employe->direccion = $request->input('direccion');
         $employe->id_rol = $request->input('id_rol');
-        $employe->fecha_contratacion = $request->input($fecha);
-
-        $employe->save();
-
-        return response()->json($employe, 201);
+        $employe->fecha_contratacion = $fecha;
+        
+       
+        if ($employe->save()) {
+            // Redirigir con mensaje de éxito
+            return redirect()->route('employe.index')->with('success', 'Empleado guardado correctamente.');
+        } else {
+            // Redirigir con mensaje de error
+            return redirect()->route('employe.index')->with('error', 'Hubo un error al guardar el empleado.');
+        }
+      
     }
 }
