@@ -14,7 +14,7 @@
 
     {{-- Tipografia --}}
 
-    {{-- css custom global--}}
+    {{-- css custom global --}}
     <link rel="stylesheet" href="{{ asset('css/style-global.css') }}">
 
     {{-- css custom page --}}
@@ -27,54 +27,108 @@
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="/"> <img src="{{ asset('img/logos/huella.png') }}" alt="Logo" width="60" height="60"> SeguridadCorp</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Inicio <span class="sr-only">(actual)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Servicios</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacto</a>
-                    </li>
-                </ul>
+
+
+    <!--side bar-->
+    <div class="sidebar" id="sidebar">
+        <div class="row mt-3">
+            <div class="col text-center">
+                <div class="logo-details">
+                    <div class="navbar-logo"> <img class="logo-nav"
+                            src="{{ asset('img/logos/huella.png') }}" alt="Logo">
+                    </div>
+                </div>
+                <div>
+                    <div class="logo_name mt-1">SeguridadCorp</div>
+                </div>
             </div>
         </div>
-    </nav>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ route('home') }}">
+                    <i class="fas fa-home icon"></i>
+                    <span class="label">Home</span>
+                </a>
+            </li>
 
-    <!-- header -->
-    <header>
-    </header>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                    aria-controls="collapseExample">
+                    <i class="fas fa-user-friends icon"></i>
 
-    <!-- Main -->
-    
-    @yield('content')
-  
+                    <span class="label">Empleados</span>
+                    <i class="fas fa-caret-down icon-collapse"></i>
+                </a>
+                <div class="collapse collapse-div" id="collapseExample">
+                    <div class="content-collapse">
+                        <ul class="nav flex-column">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employe.index') }}">
+                                    <i class="fas fa-user-friends icon"></i>
+                                    <span class="label">Listado</span>
+                                </a>
 
-    {{-- Footer --}}
-    <footer class="footer text-center py-3">
-        <div class="container">
-            <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
-            <p>Síguenos en: 
-                
-                <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
-             
-            </p>
-        </div>
-    </footer>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('employe.create') }}">
+                                    <i class="fas fa-user-plus icon"></i>
+                                    <span class="label">Agregar</span>
+                                </a>
+
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-chart-line icon"></i>
+                    <span class="label">Statistics</span>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-user icon"></i>
+                    <span class="label">Profile</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-envelope icon"></i>
+                    <span class="label">Messages</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-cog icon"></i>
+                    <span class="label">Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--toggle button-->
+    <div class="toggle-btn" id="toggle-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+    <div class="content">
+        <!-- Contenido principal -->
+
+
+        @yield('content')
+
+        {{-- Footer --}}
+        <footer class="footer text-center py-3">
+            <div class="container">
+                <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
+                <p>Síguenos en:
+                    <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
+                </p>
+            </div>
+        </footer>
+    </div>
+
 
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -92,6 +146,7 @@
 
     {{-- js custom page --}}
     @yield('js')
+
 </body>
 
 </html>
