@@ -35,14 +35,14 @@
                             <div class="form-group">
                                 <label for="nombre">Nombre:</label>
                                 <input type="text" name="nombre" id="nombre" class="form-control"
-                                    value="{{ old('nombre') }}">
+                                    value="{{ old('nombre') }}" placeholder="Nombre">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="apellido_materno">Apellido Materno:</label>
                                 <input type="text" name="apellido_materno" id="apellido_materno" class="form-control"
-                                    value="{{ old('apellido_materno') }}">
+                                    value="{{ old('apellido_materno') }}" placeholder="Apellido Materno">
                             </div>
                         </div>
                     </div>
@@ -51,14 +51,14 @@
                             <div class="form-group">
                                 <label for="apellido_paterno">Apellido Paterno:</label>
                                 <input type="text" name="apellido_paterno" id="apellido_paterno" class="form-control"
-                                    value="{{ old('apellido_paterno') }}">
+                                    value="{{ old('apellido_paterno') }}" placeholder="Apellido Paterno">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="email">Correo:</label>
                                 <input type="email" name="email" id="email" class="form-control"
-                                    value="{{ old('email') }}">
+                                    value="{{ old('email') }}" placeholder="Correo electronico">
                             </div>
                         </div>
                     </div>
@@ -67,14 +67,14 @@
                             <div class="form-group">
                                 <label for="telefono">Teléfono:</label>
                                 <input type="text" name="telefono" id="telefono" class="form-control"
-                                    value="{{ old('telefono') }}" maxlength="10">
+                                    value="{{ old('telefono') }}" maxlength="10" placeholder="Teléfono">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="direccion">Dirección:</label>
                                 <input type="text" name="direccion" id="direccion" class="form-control"
-                                    value="{{ old('direccion') }}">
+                                    value="{{ old('direccion') }}" placeholder="Dirección">
                             </div>
                         </div>
                     </div>

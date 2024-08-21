@@ -15,8 +15,11 @@ Route::get('/', HomeController::class);
 //Controlador de empleados
 Route::get('/employe', [EmployeController::class, 'index'])->name('employe.index');
 
-//Nuevo empleado 
+//Formulario de empleado 
 Route::get('/employe/create', [EmployeController::class, 'create'])->name('employe.create');
+
+//Guardar empleado
+Route::post('/employe/store', [EmployeController::class, 'store'])->name('employe.store');
 
 //Mostrar empleado
 Route::get('/employe/get/{id}', [EmployeController::class, 'show'])->name('employe.show');
