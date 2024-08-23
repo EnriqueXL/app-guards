@@ -12,7 +12,7 @@
 
     <div class="container">
         <!-- Volver -->
-        <div class="mt-2">
+        <div class="mt-2 text-right">
          
             <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
         </div>

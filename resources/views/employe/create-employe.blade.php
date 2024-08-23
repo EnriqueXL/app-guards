@@ -11,6 +11,9 @@
 @section('content')
 
     <div class="container">
+        <div class="mt-2 text-right">
+            <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
+        </div>
         {{-- <div class="row">
             <div class="col-12"> --}}
                 <div class= "description m-2 text-center">

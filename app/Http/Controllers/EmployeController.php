@@ -27,12 +27,12 @@ class EmployeController extends Controller
                 'actions' => [
                     'show' => route('employe.show', $employe->id),
                     'edit' => route('employe.edit', $employe->id),
-                   'delete' => route('employe.delete', $employe->id),
-                ] 
+                    'delete' => route('employe.delete', $employe->id),
+                ]
             ];
         }
 
-        
+
         return view('employe.all-employe', compact('headers', 'employesInfo', 'employes'));
     }
 
@@ -43,7 +43,7 @@ class EmployeController extends Controller
         //encabezados
         $headers = ['Folio, Nombre', 'email', 'telefono', 'direccion', 'Perfil', 'fecha_contratacion', 'estatus'];
 
-        $employesInfo= [
+        $employesInfo = [
             'id' => $employe->id,
             'nombre' => $employe->getFullName(),
             'email' => $employe->email,
@@ -53,7 +53,7 @@ class EmployeController extends Controller
             'fecha_contratacion' => $employe->fecha_contratacion,
             'estatus' => $employe->getStatus(),
         ];
-        
+
 
         return view('employe.show-employe', compact('headers', 'employesInfo'));
     }
@@ -64,13 +64,21 @@ class EmployeController extends Controller
         return view('employe.create-employe');
     }
 
-    //Editar un empleado
+    //Formulario para editar un empleado
     public function edit($id)
     {
-        // return view('employe.edit-employe', [
-        //     'id' => $id
-        // ]);  
-        return view('employe.edit-employe', compact('id'));
+        $employe = Employe::find($id);
+
+        return view('employe.edit-employe', compact('id', 'employe'));
+    }
+
+    //Editar empleado
+    public function update(Request $request, $id)
+    {
+        $employe = Employe::find($id);
+        $employe->update($request->all());
+
+        return redirect()->route('employe.index')->with('success', 'Empleado actualizado correctamente.');
     }
 
     //Eliminar un empleado
@@ -79,10 +87,10 @@ class EmployeController extends Controller
         return 'Eliminar un empleado con id: ' . $id;
     }
 
-    //Solicitudes POST para crear un empleado
+    //Solicitudes para crear un empleado
     public function store(Request $request)
     {
-    
+
         $fecha = date('Y-m-d H:i:s');
         $request->validate([
             'nombre' => 'required|string|max:50',
@@ -94,7 +102,7 @@ class EmployeController extends Controller
             'id_rol' => 'required|integer',
             'fecha_nacimiento' => 'required|date',
 
-        ],[
+        ], [
             'nombre.required' => 'El campo nombre es requerido',
             'apellido_paterno.required' => 'El campo apellido paterno es requerido',
             'apellido_materno.required' => 'El campo apellido materno es requerido',
@@ -107,24 +115,31 @@ class EmployeController extends Controller
             'fecha_nacimiento.required' => 'El campo fecha de nacimiento es requerido',
         ]);
 
-        $employe = new Employe();
-        $employe->nombre = $request->input('nombre');
-        $employe->apellido_paterno = $request->input('apellido_paterno');
-        $employe->apellido_materno = $request->input('apellido_materno');
-        $employe->email = $request->input('email');
-        $employe->telefono = $request->input('telefono');
-        $employe->direccion = $request->input('direccion');
-        $employe->id_rol = $request->input('id_rol');
-        $employe->fecha_contratacion = $fecha;
-        
-       
-        if ($employe->save()) {
+        //Descartado
+        // $request->request->add(['fecha_contratacion' => $fecha]);
+        // // Crear un nuevo empleado utilizando asignación masiva
+        // $employe = Employe::create($request->all());
+
+
+        // Crear un nuevo empleado utilizando asignación masiva
+        $employe = Employe::create([
+            'nombre' => $request->input('nombre'),
+            'apellido_paterno' => $request->input('apellido_paterno'),
+            'apellido_materno' => $request->input('apellido_materno'),
+            'email' => $request->input('email'),
+            'telefono' => $request->input('telefono'),
+            'direccion' => $request->input('direccion'),
+            'id_rol' => $request->input('id_rol'),
+            'fecha_contratacion' => $fecha,
+            'activo' => $request->input('activo'),
+        ]);
+
+        if ($employe) {
             // Redirigir con mensaje de éxito
             return redirect()->route('employe.index')->with('success', 'Empleado guardado correctamente.');
         } else {
             // Redirigir con mensaje de error
             return redirect()->route('employe.index')->with('error', 'Hubo un error al guardar el empleado.');
         }
-      
     }
 }

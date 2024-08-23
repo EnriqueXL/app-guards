@@ -12,6 +12,18 @@ class Employe extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'nombre',
+        'apellido_paterno',
+        'apellido_materno',
+        'email',
+        'telefono',
+        'direccion',
+        'id_rol',
+        'fecha_contratacion',
+
+    ];
+
     protected function nombre(): Attribute
     {
         //Mutador

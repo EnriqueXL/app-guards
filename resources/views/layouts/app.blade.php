@@ -29,8 +29,6 @@
 
 <body>
 
-
-
     <!--side bar-->
     <div class="sidebar" id="sidebar">
         <div class="row mt-3">
@@ -41,7 +39,7 @@
                     </div>
                 </div>
                 <div>
-                    <div class="logo_name mt-1">SeguridadCorp</div>
+                    <div class="logo_name mt-1">Corp</div>
                 </div>
             </div>
         </div>
@@ -109,14 +107,15 @@
             </li>
         </ul>
     </div>
+
+    
     <!--toggle button-->
     <div class="toggle-btn" id="toggle-btn">
         <i class="fas fa-bars"></i>
     </div>
     <div class="content">
+        
         <!-- Contenido principal -->
-
-
         @yield('content')
 
         {{-- Footer --}}
