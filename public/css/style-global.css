@@ -81,7 +81,17 @@ body {
 .sidebar.collapsed .content-collapse {
    margin-left: 0px;
 }
+footer {
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   width:100%;
+   background:#E7E7E9;
+}
 
+.footer-table{
+  display: flex;
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 767px) {
    .sidebar {
@@ -111,6 +121,22 @@ body {
    .content {
       padding: 10px;
    }
+
+   .footer {
+      display: none;
+   } 
+
+   .footer-table{
+      display: block;
+      /* font-size: 1rem; */
+   }
+
+   .pagination{
+      display: flex;
+      justify-content: center;
+   }
+  
+   
 }
 
 

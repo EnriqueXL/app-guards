@@ -34,8 +34,8 @@
         <div class="row mt-3">
             <div class="col text-center">
                 <div class="logo-details">
-                    <div class="navbar-logo"> <img class="logo-nav"
-                            src="{{ asset('img/logos/huella.png') }}" alt="Logo">
+                    <div class="navbar-logo"> <img class="logo-nav" src="{{ asset('img/logos/huella.png') }}"
+                            alt="Logo">
                     </div>
                 </div>
                 <div>
@@ -108,29 +108,30 @@
         </ul>
     </div>
 
-    
+
     <!--toggle button-->
     <div class="toggle-btn" id="toggle-btn">
         <i class="fas fa-bars"></i>
     </div>
     <div class="content">
-        
-        <!-- Contenido principal -->
-        @yield('content')
 
-        {{-- Footer --}}
-        <footer class="footer text-center py-3">
-            <div class="container">
-                <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
-                <p>Síguenos en:
-                    <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
-                </p>
-            </div>
-        </footer>
+        <!-- Coitainer predeterminado -->
+        <div class="container-fluid">
+            @yield('content')
+        </div>
+
     </div>
 
-
+    {{-- Footer --}}
+    {{-- <footer class="footer text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
+            <p>Síguenos en:
+                <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
+            </p>
+        </div>
+    </footer> --}}
 
     <!-- Optional JavaScript; choose one of the two! -->
 
