@@ -34,19 +34,20 @@
         <div class="row mt-3">
             <div class="col text-center">
                 <div class="logo-details">
-                    <div class="navbar-logo"> <img class="logo-nav" src="{{ asset('img/logos/huella.png') }}"
-                            alt="Logo">
+                    <div class="navbar-logo">
+                        <img class="logo-nav" src="{{ asset('img/logos/huella.png') }}" alt="Logo">
                     </div>
                 </div>
                 <div>
                     <div class="logo_name mt-1">Corp</div>
                 </div>
+
             </div>
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('home') }}">
-                    <i class="fas fa-home icon"></i>
+                    <i class="fas fa-tachometer-alt icon"></i>
                     <span class="label">Home</span>
                 </a>
             </li>
@@ -109,14 +110,19 @@
     </div>
 
 
+
     <!--toggle button-->
-    <div class="toggle-btn" id="toggle-btn">
+    <div class="toggle-btn-mq" id="toggle-btn-mq" hidden>
         <i class="fas fa-bars"></i>
     </div>
+    
     <div class="content">
-
+        <div class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </div>
         <!-- Coitainer predeterminado -->
         <div class="container-fluid">
+
             @yield('content')
         </div>
 
