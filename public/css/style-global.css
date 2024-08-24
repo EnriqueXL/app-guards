@@ -97,6 +97,12 @@ footer {
    display: flex;
 }
 
+.sticky-bottom-form {
+   position: absolute;
+   bottom: 0;
+   right: 0;
+}
+
 @media (min-width: 768px) {
    body {
       flex-direction: row;

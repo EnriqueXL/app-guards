@@ -45,13 +45,16 @@ class EmployeController extends Controller
 
         $employesInfo = [
             'id' => $employe->id,
-            'nombre' => $employe->getFullName(),
+            'nombre' => $employe->nombre,
+            'apellido_paterno' => $employe->apellido_paterno,
+            'apellido_materno' => $employe->apellido_materno,
             'email' => $employe->email,
             'telefono' => $employe->telefono,
             'direccion' => $employe->direccion,
             'perfil' => $employe->roleEmploye->nombre,
             'fecha_contratacion' => $employe->fecha_contratacion,
             'estatus' => $employe->getStatus(),
+            'foto_perfil' => $employe->foto_perfil,
         ];
 
 
