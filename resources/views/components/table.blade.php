@@ -24,9 +24,11 @@
          
         </tbody>
     </table>
-    <div class="d-flex justify-content-between align-items-center mt-3">
-        <p class="mb-0">Mostrando {{ $employes->firstItem() }} a {{ $employes->lastItem() }} de {{ $employes->total() }} registros</p>
-        <div>
+    <div class="footer-table justify-content-between align-items-center mt-3 text-center">
+        <div class="footer-table-text">
+            <p>Mostrando {{ $employes->firstItem() }} a {{ $employes->lastItem() }} de {{ $employes->total() }} registros</p>
+        </div>
+        <div class="footer-table-contain">
             {{ $employes->links() }}
         </div>
     </div>

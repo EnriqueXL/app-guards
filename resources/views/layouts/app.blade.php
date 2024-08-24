@@ -34,19 +34,21 @@
         <div class="row mt-3">
             <div class="col text-center">
                 <div class="logo-details">
-                    <div class="navbar-logo"> <img class="logo-nav"
-                            src="{{ asset('img/logos/huella.png') }}" alt="Logo">
+                    <div class="navbar-logo mb-2">
+                        <img class="logo-nav" src="{{ asset('img/logos/huella.png') }}" alt="Logo">
+                        <span class="logo_name">System - corp</span>
                     </div>
                 </div>
-                <div>
+                {{-- <div>
                     <div class="logo_name mt-1">Corp</div>
-                </div>
+                </div> --}}
+
             </div>
         </div>
         <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('home') }}">
-                    <i class="fas fa-home icon"></i>
+                    <i class="fas fa-tachometer-alt icon"></i>
                     <span class="label">Home</span>
                 </a>
             </li>
@@ -108,29 +110,35 @@
         </ul>
     </div>
 
-    
+
+
     <!--toggle button-->
-    <div class="toggle-btn" id="toggle-btn">
+    <div class="toggle-btn-mq" id="toggle-btn-mq" hidden>
         <i class="fas fa-bars"></i>
     </div>
+    
     <div class="content">
-        
-        <!-- Contenido principal -->
-        @yield('content')
+        <div class="toggle-btn" id="toggle-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+        <!-- Coitainer predeterminado -->
+        <div class="container-fluid">
 
-        {{-- Footer --}}
-        <footer class="footer text-center py-3">
-            <div class="container">
-                <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
-                <p>Síguenos en:
-                    <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
-                </p>
-            </div>
-        </footer>
+            @yield('content')
+        </div>
+
     </div>
 
-
+    {{-- Footer --}}
+    {{-- <footer class="footer text-center py-3">
+        <div class="container">
+            <p>&copy; 2024 SeguridadCorp. Todos los derechos reservados.</p>
+            <p>Síguenos en:
+                <a href="#" class="text-dark ml-2"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-dark ml-2"><i class="fab fa-twitter"></i></a>
+            </p>
+        </div>
+    </footer> --}}
 
     <!-- Optional JavaScript; choose one of the two! -->
 
