@@ -83,7 +83,7 @@
                 <div class="form-group">
                     <label for="puesto">Puesto:</label>
                     <select name="id_rol" id="id_rol" class="form-control">
-                        <option value="">Seleccione un puesto</option>
+                        <option value="">Seleccione un puesto:</option>
                         <option value="1" {{ old('puesto') == 1 ? 'selected' : '' }}>Sistemas</option>
                         <option value="2" {{ old('puesto') == 2 ? 'selected' : '' }}>Supervisor</option>
                         <option value="3" {{ old('puesto') == 3 ? 'selected' : '' }}> Guardia</option>

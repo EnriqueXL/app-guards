@@ -78,10 +78,18 @@ class EmployeController extends Controller
     //Editar empleado
     public function update(Request $request, $id)
     {
+  
         $employe = Employe::find($id);
-        $employe->update($request->all());
+        if($employe->update($request->all()))
+        {
+            return redirect()->route('employe.index')->with('success', 'Empleado actualizado correctamente.');
+        }
+        else
+        {
+            return redirect()->route('employe.index')->with('error', 'Hubo un error al actualizar el empleado.');
+        }
 
-        return redirect()->route('employe.index')->with('success', 'Empleado actualizado correctamente.');
+       
     }
 
     //Solicitudes para crear un empleado

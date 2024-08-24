@@ -24,8 +24,8 @@
                 role="tab" aria-controls="nav-home" aria-selected="true">Datos personales</button>
             <button class="nav-link" id="nav-profile-tab" data-toggle="tab" data-target="#nav-profile" type="button"
                 role="tab" aria-controls="nav-profile" aria-selected="false">Datos laborales</button>
-            <button class="nav-link" id="nav-contact-tab" data-toggle="tab" data-target="#nav-contact" type="button"
-                role="tab" aria-controls="nav-contact" aria-selected="false">Observaciónes</button>
+            <button class="nav-link" id="nav-obs-tab" data-toggle="tab" data-target="#nav-obs" type="button"
+                role="tab" aria-controls="nav-obs" aria-selected="false">Observaciónes</button>
         </div>
     </nav>
     <form action="{{ route('employe.update', $employe['id']) }}" method="POST">
@@ -34,81 +34,100 @@
 
         <div class="tab-content" id="nav-tabContent">
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-
                 <div class="card-body bg-white">
                     <h5 class="card-title">{{ $employe['nombre'] }}</h5>
                     <div class="card-text">
-
-                        <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" name="nombre"
-                                value="{{ $employe['nombre'] }}">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" value="{{ $employe['nombre'] }}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="apellido_paterno">Apellido paterno</label>
+                                <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno" value="{{ $employe['apellido_paterno'] }}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="apellido_materno">Apellido materno</label>
+                                <input type="text" class="form-control" id="apellido_materno" name="apellido_materno" value="{{ $employe['apellido_materno'] }}">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" name="email" value="{{ $employe['email'] }}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="telefono">Teléfono</label>
+                                <input type="text" class="form-control" id="telefono" name="telefono" value="{{ $employe['telefono'] }}" maxlength="10">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="direccion">Dirección</label>
+                                <input type="text" class="form-control" id="direccion" name="direccion" value="{{ $employe['direccion'] }}">
+                            </div>
                         </div>
                         <div class="form-group">
-                            <label for = "apellido_paterno">Apellido paterno</label>
-                            <input type="text" class="form-control" id="apellido_paterno" name="apellido_paterno"
-                                value="{{ $employe['apellido_paterno'] }}">
+                            <label for="foto_perfil">Foto de perfil</label>
+                            <input type="file" class="form-control" id="foto_perfil" name="foto_perfil">
                         </div>
-                        <div class="form-group">
-                            <label for="apellido_materno">Apellido materno</label>
-                            <input type="text" class="form-control" id="apellido_materno" name="apellido_materno"
-                                value="{{ $employe['apellido_materno'] }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Correo electrónico</label>
-                            <input type="text" class="form-control" id="email" name="email"
-                                value="{{ $employe['email'] }}">
-                        </div>
-                        <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" name="telefono"
-                                value="{{ $employe['telefono'] }}" maxlength="10">
-                        </div>
-                        <div class="form-group">
-                            <label for="direccion">Dirección</label>
-                            <input type="text" class="form-control" id="direccion" name="direccion"
-                                value="{{ $employe['direccion'] }}">
-                        </div>
-                    </div>
-                    <div class="mt-2 text-right">
-                        <button type="submit" class="btn btn-primary">Guardar</button>
-                        <a href="{{ route('employe.show', $employe['id']) }}" class="btn btn-light">Cancelar</a>
                     </div>
                 </div>
-
             </div>
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                 <div class="card-body bg-white">
                     <h5 class="card-title">{{ $employe['nombre'] }}</h5>
                     <div class="card-text">
-
-
-                        <strong>Puesto:</strong> {{ $employe['perfil'] }} <br>
-                        <strong>Fecha de contratación:</strong> {{ $employe['fecha_contratacion'] }} <br>
-                        <strong>Estatus:</strong> {{ $employe['estatus'] }} <br>
-
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="id_rol">Perfil</label>
+                                <select id="id_rol" name="id_rol" class="form-control">
+                                    <option value="" disabled>Seleccione el puesto:</option>
+                                    <option value="1" {{ $employe['id_rol'] == 1 ? 'selected' : '' }}>Sistemas</option>
+                                    <option value="2" {{ $employe['id_rol'] == 2 ? 'selected' : '' }}>Supervisor</option>
+                                    <option value="3" {{ $employe['id_rol'] == 3 ? 'selected' : '' }}>Guardia</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="fecha_contratacion">Fecha de contratación</label>
+                                <input type="date" class="form-control" id="fecha_contratacion" name="fecha_contratacion" value="{{ $employe['fecha_contratacion'] }}">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="activo">Estatus</label>
+                                <select id="activo" name="activo" class="form-control">
+                                    <option value="" disabled>Selecciona...</option>
+                                    <option value="1" {{ $employe['activo'] == 1 ? 'selected' : '' }}>Activo</option>
+                                    <option value="2" {{ $employe['activo'] == 2 ? 'selected' : '' }}>Inactivo</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
             </div>
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-
+            <div class="tab-pane fade" id="nav-obs" role="tabpanel" aria-labelledby="nav-obs-tab">
                 <div class="card-body bg-white">
                     <h5 class="card-title">{{ $employe['nombre'] }}</h5>
                     <div class="card-text">
-
-                        <strong>Correo electrónico:</strong> {{ $employe['email'] }} <br>
-                        <strong>Teléfono:</strong> {{ $employe['telefono'] }} <br>
-                        <strong>Dirección:</strong> {{ $employe['direccion'] }} <br>
-                        <strong>Fecha de contratación:</strong> {{ $employe['fecha_contratacion'] }} <br>
-                        <strong>Estatus:</strong> {{ $employe['estatus'] }} <br>
+                        <div class="form-group">
+                            <label for="actas_administrativas">Actas administrativas</label>
+                            <input type="file" class="form-control" id="actas_administrativas" name="actas_administrativas">
+                        </div>
+                        <div class="form-group">
+                            <label for="observacion">Observaciones</label>
+                            <textarea class="form-control" id="observacion" name="observacion" rows="4">{{ $employe['observacion'] }}</textarea>
+                        </div>
 
                     </div>
-
                 </div>
             </div>
         </div>
 
+        <div class="mt-2 text-right">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{ route('employe.show', $employe['id']) }}" class="btn btn-light">Cancelar</a>
+        </div>
     </form>
 
 @endsection

@@ -21,7 +21,7 @@ class Employe extends Model
         'direccion',
         'id_rol',
         'fecha_contratacion',
-
+        'activo',
     ];
 
     protected function nombre(): Attribute
@@ -53,8 +53,14 @@ class Employe extends Model
 
     //casteo de atributos, para que se muestre en el formato deseado y no por defecto de eloquent (string).
     protected $casts = [
-        'fecha_contratacion' => 'datetime:Y-m-d',
+        'fecha_contratacion' => 'date:Y-m-d'
     ];
+
+     // Accesor para formatear la fecha de contratación
+     public function getFechaContratacionAttribute($value)
+     {
+         return \Carbon\Carbon::parse($value)->format('Y-m-d');
+     }
 
     protected $table = 'empleados';
 
