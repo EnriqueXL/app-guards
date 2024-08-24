@@ -136,7 +136,6 @@ class EmployeController extends Controller
             'direccion' => $request->input('direccion'),
             'id_rol' => $request->input('id_rol'),
             'fecha_contratacion' => $fecha,
-            'activo' => $request->input('activo'),
         ]);
 
         if ($employe) {

@@ -6,38 +6,58 @@
     </style>
 @endsection
 
-@section('title', 'Home App')
+@section('title', 'Inicio')
 
 @section('content')
-    <div class="container-fluid">
-    
-        <div class= "description m-2 text-center">
-            <h1>Sevicio de guardias de seguridad</h1>
-            <p>
-                Somos una empresa dedicada a la prestación de servicios de seguridad privada, con más de 20 años de experiencia en el mercado.
-            </p>
-        </div>
 
-        {{-- Componentes de clase --}}
-        {{-- <x-alert2 type="success" class="m-4">
-            <x-slot name="title">
-                Nuevo mensaje
-            </x-slot>
-            <p>Este es un mensaje de información</p>
-        </x-alert2> --}}
 
-        {{-- Componentes anonimos --}}
-        <x-alert type="success" class="m-4">
-            <x-slot name="title">
-                Nuevo mensaje
-            </x-slot>
-            <p>Este es un mensaje de información</p>
-        </x-alert>
+    <div class= "description m-2 text-center">
+        <h1>Micro CRM</h1>
+        <p>
+            <strong>Micro CRM</strong> es una aplicación web que permite gestionar la información de los empleados de una
+            empresa.
+        </p>
     </div>
+
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Card 1: Total de Empleados -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Total de Empleados</h5>
+                    <p class="card-text display-4">232</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2: Empleados Activos -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Empleados Activos</h5>
+                    {{-- <p class="card-text display-4">{{ $empleadosActivos }}</p> --}}
+                    <p class="card-text display-4">131</p>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3: Empleados Inactivos -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Empleados Inactivos</h5>
+                    <p class="card-text display-4">23</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+
 @endsection
 
 @section('js')
     <script>
-    //    alert('Home App');
+        //    alert('Home App');
     </script>
 @endsection
