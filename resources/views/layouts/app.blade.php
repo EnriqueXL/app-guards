@@ -34,13 +34,14 @@
         <div class="row mt-3">
             <div class="col text-center">
                 <div class="logo-details">
-                    <div class="navbar-logo">
+                    <div class="navbar-logo mb-2">
                         <img class="logo-nav" src="{{ asset('img/logos/huella.png') }}" alt="Logo">
+                        <span class="logo_name">System - corp</span>
                     </div>
                 </div>
-                <div>
+                {{-- <div>
                     <div class="logo_name mt-1">Corp</div>
-                </div>
+                </div> --}}
 
             </div>
         </div>
