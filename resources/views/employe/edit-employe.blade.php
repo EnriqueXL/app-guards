@@ -6,7 +6,7 @@
     </style>
 @endsection
 
-@section('title', 'Listado de empleados')
+@section('title', 'Actualizar empleado')
 
 @section('content')
 
@@ -17,7 +17,7 @@
     @section('nav-menu')
         <a href="{{ route('employe.show', $employe['id']) }}" class="btn btn-light"><i class="fas fa-chevron-left"></i></a>
     @endsection
-    <h3 class="text-center mt-2">Expediente del empleado</h3>
+   
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <button class="nav-link active" id="nav-home-tab" data-toggle="tab" data-target="#nav-home" type="button"

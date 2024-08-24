@@ -134,7 +134,7 @@ footer {
    }
 
    .sidebar.collapsed + .toggle-btn-mq {
-      left: 10px;
+      /* left: 10px; */
    }
 
    .content {

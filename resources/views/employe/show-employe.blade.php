@@ -18,7 +18,7 @@
         <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
     @endsection
 
-    <h3 class="text-center">Expediente del empleado</h3>
+    {{-- <h3 class="text-center">Expediente del empleado</h3> --}}
     <div class="container-fluid">
         <ul class="nav nav-tabs" id="employeeTab" role="tablist">
             <li class="nav-item">

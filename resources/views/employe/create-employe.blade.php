@@ -6,18 +6,9 @@
     </style>
 @endsection
 
-@section('title', 'Create Employe')
+@section('title', 'Crear empleado')
 
 @section('content')
-
-    {{-- @section('nav-menu')
-        <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
-    @endsection --}}
-    {{-- <div class="row">
-            <div class="col-12"> --}}
-    <div class= "description m-2 text-center">
-        <h1>Registro de empleado</h1>
-    </div>
 
     <!-- Mostrar errores de validación -->
     @if ($errors->any())
@@ -104,11 +95,10 @@
 
         <div class="text-right">
             <button type="submit" class="btn btn-primary">Guardar</button>
+            <a href="{{ route('employe.index') }}" class="btn btn-light">Cancelar</a>
         </div>
     </form>
-    {{-- </div>
-        </div> --}}
-
+   
 
 @endsection
 

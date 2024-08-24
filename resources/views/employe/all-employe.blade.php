@@ -10,11 +10,6 @@
 
 @section('content')
 
-
-    <div class= "description m-2 text-center">
-        <h1>Listado de empleados</h1>
-    </div>
-
     @if (session('success'))
         <div class="alert alert-success">
             {{ session('success') }}
