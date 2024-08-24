@@ -69,6 +69,7 @@
                     </div>
                     <div class="mt-2 text-right">
                         <button type="submit" class="btn btn-primary">Guardar</button>
+                        <a href="{{ route('employe.show', $employe['id']) }}" class="btn btn-light">Cancelar</a>
                     </div>
                 </div>
 

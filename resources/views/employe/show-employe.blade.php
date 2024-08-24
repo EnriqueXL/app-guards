@@ -2,7 +2,11 @@
 
 @section('css')
     <style>
-        /* css custom page */
+        .sticky-bottom {
+        position: absolute;
+        bottom: 0;
+        right: 0;s    
+}
     </style>
 @endsection
 
@@ -12,9 +16,13 @@
 
     <!-- Volver -->
     <div class="mt-2 text-right">
-
         <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
     </div>
+
+    <!-- vovler al expediente -->
+    {{-- <div class="mt-2 text-right">
+        <a href="{{ route('employe.edit', $employesInfo['id']) }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
+    </div> --}}
     <h3 class="text-center mt-2">Expediente del empleado</h3>
     <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
@@ -72,6 +80,16 @@
 
             </div>
         </div>
+    </div>
+
+    <div class="sticky-bottom m-3">
+        <a href="{{ route('employe.edit', $employesInfo['id']) }}" class="btn btn-warning"><i class="far fa-edit"></i></a>
+        
+        <form action="{{ route('employe.destroy', $employesInfo['id']) }}" method="POST" class="d-inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></button>
+        </form>
     </div>
 
 @endsection

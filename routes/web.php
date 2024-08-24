@@ -31,7 +31,7 @@ Route::get('/employe/edit/{id}', [EmployeController::class, 'edit'])->name('empl
 Route::post('/employe/update/{id}', [EmployeController::class, 'update'])->name('employe.update');
 
 //Eliminar empleado
-Route::get('/employe/delete/{id}', [EmployeController::class, 'delete'])->name('employe.delete');
+Route::delete('/employe/destroy/{id}', [EmployeController::class, 'destroy'])->name('employe.destroy');
 
 
 //Post Controller for petition

@@ -26,8 +26,8 @@ class EmployeController extends Controller
                 'estatus' => $employe->getStatus(),
                 'actions' => [
                     'show' => route('employe.show', $employe->id),
-                    'edit' => route('employe.edit', $employe->id),
-                    'delete' => route('employe.delete', $employe->id),
+                    // 'edit' => route('employe.edit', $employe->id),
+                    // 'delete' => route('employe.delete', $employe->id),
                 ]
             ];
         }
@@ -79,12 +79,6 @@ class EmployeController extends Controller
         $employe->update($request->all());
 
         return redirect()->route('employe.index')->with('success', 'Empleado actualizado correctamente.');
-    }
-
-    //Eliminar un empleado
-    public function delete($id)
-    {
-        return 'Eliminar un empleado con id: ' . $id;
     }
 
     //Solicitudes para crear un empleado
@@ -141,5 +135,15 @@ class EmployeController extends Controller
             // Redirigir con mensaje de error
             return redirect()->route('employe.index')->with('error', 'Hubo un error al guardar el empleado.');
         }
+    }
+
+    //Eliminar empleado
+    public function destroy($id)
+    {
+        $employe = Employe::find($id);
+        $employe->delete();
+
+
+        return redirect()->route('employe.index')->with('success', 'Empleado eliminado correctamente.');
     }
 }

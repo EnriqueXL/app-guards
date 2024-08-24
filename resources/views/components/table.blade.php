@@ -16,8 +16,8 @@
                     <td>{{ $row['estatus'] }}</td>
                     <td>
                         <a href="{{ $row['actions']['show'] }}" class="btn btn-info btn-sm"><i class="far fa-eye"></i></a>
-                        <a href="{{ $row['actions']['edit'] }}" class="btn btn-warning btn-sm"><i class="far fa-edit"></i></a>
-                        <a href="{{ $row['actions']['delete'] }}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></a>
+                        {{-- <a href="{{ $row['actions']['edit'] }}" class="btn btn-warning btn-sm"><i class="far fa-edit"></i></a>
+                        <a href="{{ $row['actions']['delete'] }}" class="btn btn-danger btn-sm"><i class="far fa-trash-alt"></i></a> --}}
                     </td>
                 </tr>
             @endforeach
