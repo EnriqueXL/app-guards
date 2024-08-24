@@ -2,7 +2,7 @@
 
 @section('css')
     <style>
-        /* css custom page */
+       
     </style>
 @endsection
 
@@ -81,18 +81,17 @@
                 </div>
             </div>
         </div>
-
-        <div class="sticky-bottom-form m-3 mb-5">
-            <a href="{{ route('employe.edit', $employesInfo['id']) }}" class="btn btn-warning"><i class="far fa-edit"></i></a>
-            
-            <form action="{{ route('employe.destroy', $employesInfo['id']) }}" method="POST" class="d-inline">
-                @csrf
-                @method('DELETE')
-                <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></button>
-            </form>
-        </div>
     </div>
-    
+
+    <div class="sticky-bottom-form m-3">
+        <a href="{{ route('employe.edit', $employesInfo['id']) }}" class="btn btn-warning"><i class="far fa-edit"></i></a>
+        
+        <form action="{{ route('employe.destroy', $employesInfo['id']) }}" method="POST" class="d-inline">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger"><i class="far fa-trash-alt"></i></a></button>
+        </form>
+    </div>
 
    
 

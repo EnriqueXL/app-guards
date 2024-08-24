@@ -154,4 +154,16 @@ footer {
       display: flex;
       justify-content: center;
    }
+
+   .sticky-bottom-form {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      
+  }
+   .sticky-bottom-form a,
+   .sticky-bottom-form form {
+      margin-left: 5px; 
+   }
 }
