@@ -11,9 +11,12 @@
 @section('content')
 
     <!-- Volver -->
-    <div class="mt-2 text-right">
+    {{-- <div class="mt-2 text-right">
         <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
-    </div>
+    </div> --}}
+    @section('nav-menu')
+        <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
+    @endsection
 
     <h3 class="text-center">Expediente del empleado</h3>
     <div class="container-fluid">

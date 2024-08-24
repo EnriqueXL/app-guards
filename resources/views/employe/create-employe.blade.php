@@ -10,10 +10,9 @@
 
 @section('content')
 
-
-    <div class="mt-2 text-right">
+    {{-- @section('nav-menu')
         <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a>
-    </div>
+    @endsection --}}
     {{-- <div class="row">
             <div class="col-12"> --}}
     <div class= "description m-2 text-center">

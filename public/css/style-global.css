@@ -129,8 +129,7 @@ footer {
    }
 
    .toggle-btn-mq {
-      left: 10px;
-      position: absolute;
+      /* position: absolute; */
       display: block !important;
    }
 

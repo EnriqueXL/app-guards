@@ -112,15 +112,23 @@
 
 
 
-    <!--toggle button-->
-    <div class="toggle-btn-mq" id="toggle-btn-mq" hidden>
-        <i class="fas fa-bars"></i>
-    </div>
+    
     
     <div class="content">
-        <div class="toggle-btn" id="toggle-btn">
-            <i class="fas fa-bars"></i>
-        </div>
+        <nav class="navbar navbar-light bg-light">
+            <div class="toggle-btn" id="toggle-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <!--toggle button for mobile-->
+            <div class="toggle-btn-mq" id="toggle-btn-mq" hidden>
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="mt-2 text-right">
+                {{-- <a href="{{ route('employe.index') }}" class="btn btn-light"> <i class="fas fa-chevron-left"></i></a> --}}
+                @yield('nav-menu')
+            </div> 
+          </nav>
+        
         <!-- Coitainer predeterminado -->
         <div class="container-fluid">
 
