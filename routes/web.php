@@ -38,24 +38,3 @@ Route::delete('/employe/destroy/{id}', [EmployeController::class, 'destroy'])->n
 Route::get('/post', [PostController::class, 'index']);
 
 
-//pruebas
-Route::get('/test', function () {
-    $employes = Employe::all();
-
-    // dd($employes->activo);
-    return $employes;
-    // $employes = new Employe();
-    // $employes->nombre = 'jose de jsus';
-    // $employes->apellido_paterno = 'perEz';
-    // $employes->apellido_materno = 'lop3z';
-    // $employes->email = '';
-    // $employes->telefono = '1234567890';
-    // $employes->direccion = 'Calle 123';
-    // $employes->id_rol = 1;
-    // $employes->fecha_contratacion = date('Y-m-d H:i:s');
-
-    // $employes->save();
-    // return 'Guardado';
-
-
-});
