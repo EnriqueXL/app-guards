@@ -80,6 +80,7 @@ class EmployeController extends Controller
     {
   
         $employe = Employe::find($id);
+        //Asignacion masiva
         if($employe->update($request->all()))
         {
             return redirect()->route('employe.index')->with('success', 'Empleado actualizado correctamente.');
